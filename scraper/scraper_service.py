@@ -9,7 +9,6 @@ from scraper import models, utils
 
 logger = utils.get_logger(__name__)
 
-
 def retrieve_target(enterprise_number):
     with sync_api.sync_playwright() as p:
         try:

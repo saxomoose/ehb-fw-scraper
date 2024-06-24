@@ -9,7 +9,6 @@ class FunctionEnum(enum.StrEnum):
     PERMANENT_REPRESENTATIVE = "PERMANENT_REPRESENTATIVE"
     PERSON_IN_CHARGE_OF_DAILY_MANAGEMENT = "PERSON_IN_CHARGE_OF_DAILY_MANAGEMENT"
 
-
 @dataclasses.dataclass
 class Pivot:
     function: FunctionEnum
@@ -32,12 +31,10 @@ class Pivot:
         substring = start_date[6:]
         self.start_date = datetime.datetime.strptime(substring, "%B %d, %Y").date()
 
-
 @dataclasses.dataclass
 class DirectFunction(Pivot):
     def __init__(self, function: str, start_date: str):
         super().__init__(function, start_date)
-
 
 @dataclasses.dataclass
 class NaturalPersonOfficer:
@@ -63,7 +60,6 @@ class IndirectFunction(Pivot):
     ):
         super().__init__(function, start_date)
         self.permanent_representative = permanent_representative
-
 
 @dataclasses.dataclass
 class LegalPersonOfficer:

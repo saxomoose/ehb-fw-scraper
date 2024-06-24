@@ -6,7 +6,7 @@ from scraper import utils
 
 logger = utils.get_logger(__name__)
 
-# TTL set to seconds until end of day. Assumes that KBO data is refreshed at first interval after midnight.
+# TTL set to seconds until end of day. Assumes that CBE data is refreshed at first interval after midnight.
 def store(enterprise_number: int, json: str):
     seconds_until_end_of_day = time_until_end_of_day().seconds
     client = redis.Redis(
